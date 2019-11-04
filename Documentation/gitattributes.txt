@@ -498,7 +498,7 @@ command. This is achieved by using the long-running process protocol
 When Git encounters the first file that needs to be cleaned or smudged,
 it starts the filter and performs the handshake. In the handshake, the
 welcome message sent by Git is "git-filter-client", only version 2 is
-suppported, and the supported capabilities are "clean", "smudge", and
+supported, and the supported capabilities are "clean", "smudge", and
 "delay".
 
 Afterwards Git sends a list of "key=value" pairs terminated with

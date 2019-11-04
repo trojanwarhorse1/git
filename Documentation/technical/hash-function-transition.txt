@@ -602,7 +602,7 @@ git --output-format=sha1 log abac87a^{sha1}..f787cac^{sha256}
 
 Choice of Hash
 --------------
-In early 2005, around the time that Git was written,  Xiaoyun Wang,
+In early 2005, around the time that Git was written, Xiaoyun Wang,
 Yiqun Lisa Yin, and Hongbo Yu announced an attack finding SHA-1
 collisions in 2^69 operations. In August they published details.
 Luckily, no practical demonstrations of a collision in full SHA-1 were
