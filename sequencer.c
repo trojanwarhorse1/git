@@ -47,7 +47,7 @@ static GIT_PATH_FUNC(git_path_opts_file, "sequencer/opts")
 static GIT_PATH_FUNC(git_path_head_file, "sequencer/head")
 static GIT_PATH_FUNC(git_path_abort_safety_file, "sequencer/abort-safety")
 
-static GIT_PATH_FUNC(rebase_path, "rebase-merge")
+GIT_PATH_FUNC(git_path_rebase_merge_dir, "rebase-merge")
 /*
  * The file containing rebase commands, comments, and empty lines.
  * This file is created by "git rebase -i" then edited by the user. As
@@ -218,7 +218,7 @@ static inline int is_rebase_i(const struct replay_opts *opts)
 static const char *get_dir(const struct replay_opts *opts)
 {
 	if (is_rebase_i(opts))
-		return rebase_path();
+		return git_path_rebase_merge_dir();
 	return git_path_seq_dir();
 }
 

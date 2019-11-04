@@ -76,4 +76,13 @@ test_expect_success 'moved back to branch correctly' '
 
 test_debug 'gitk --all & sleep 1'
 
+test_expect_success 'correct advice upon empty commit' '
+	git checkout -b rebase-skip &&
+	test_commit a1 &&
+	test_tick &&
+	git commit --amend -m amended --no-edit &&
+	test_must_fail git rebase -m --onto a1 HEAD^ 2>err &&
+	test_i18ngrep "git rebase --skip" err
+'
+
 test_done
